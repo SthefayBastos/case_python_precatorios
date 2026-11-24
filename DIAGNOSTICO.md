@@ -10,7 +10,7 @@ P2. Estorno somado como pagamento
 
 Evidência: pagamentos.json, processo 0034567-32.2018.8.26.0405: ev-006 (pagamento, 5000) e ev-007 (estorno, 5000, positivo). A documentação diz que tipo é "sempre pagamento".
 Impacto: o sistema registra R$ 10.000 pagos, quando o líquido é R$ 0. O precatório parece quitado sem ter sido pago.
-Relação: consequência de documentação desatualizada. Ressalva: não vimos o código, então "o script soma sem olhar o tipo" é hipótese a partir do passo 2 do fluxo.
+Relação: consequência de documentação desatualizada. Ressalva: O código em questão não foi disponibilizado, então "o script soma sem olhar o tipo" é hipótese a partir do passo 2 do fluxo.
 
 P3. Falhas de importação silenciosas
 
@@ -61,5 +61,5 @@ Relação: são os gatilhos de P3, que os transforma em perda silenciosa.
 P8. Documentação e schema incompletos ou conflitantes
 
 Evidência: tipo só "pagamento" na doc, mas o schema aceita estorno. atualizado_em está na doc e não no schema. hub.csv não é documentado. Data de apresentação e total pago não aparecem no schema. numero_processo CHAR(20) não comporta os 25 caracteres do formato com máscara, como 0012345-10.2019.8.26.0053.
-Impacto: ninguém sabe o contrato real. Se o banco de produção for igual ao schema.sql, importar o número com máscara pode gerar erro de tamanho, o que, somado ao P3, faria processos inteiros serem ignorados. Verifique antes de afirmar.
+Impacto: ninguém sabe o contrato real. Se o banco de produção for igual ao schema.sql, importar o número com máscara pode gerar erro de tamanho, o que, somado ao P3, faria processos inteiros serem ignorados.
 Relação: causa de P2 e P3.
