@@ -27,3 +27,10 @@ valores zero []
 Valores de 'tipo': {'pagamento': 12, 'estorno': 1}
 Formatos de data: {'AAAA-MM-DD': 11, 'DD/MM/AAAA': 2}
 Formatos de processo: {'com máscara CNJ': 11, '20 dígitos sem máscara': 1, 'vazio/nulo': 1}
+
+
+
+===================
+erro na data de pagamento limite:
+o sistema usa < em vez de <= na comparação.
+hub se mostra inconsistente no tratamento de fuso impactando nas datas limites de pagamento.
