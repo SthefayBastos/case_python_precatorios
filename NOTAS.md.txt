@@ -1,0 +1,20 @@
+## Documentação do tribunal
+-sem duvidas
+
+## schema.sql
+- não existe restrição de duplicação de registro
+-estorno:o enunciado diz que o script "soma cada valor ao total pago", como fica a soma ?
+- limite de datas (muito a frente/ muito antigas)
+
+## pagamentos.json
+- arquivo pg com valor null, valor negativo
+-datas com formatos diferentes
+-registros duplicados ( ev 001 difícil saber qual vale)
+-registros sem "dono"
+-registro com formatos diferentes
+## tribunal.csv / hub.csv
+- ...
+
+## Perguntas para o tribunal/operação
+- sem duvidas
+
