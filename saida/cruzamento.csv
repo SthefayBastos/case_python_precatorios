@@ -1,0 +1,7 @@
+processo,linha_tribunal,linha_hub,status,motivos
+00123451020198260053,2,2,ok,"nota: ente compatível, mas o tribunal perdeu acentos; não confirmado"
+00234562120208260053,3,3,divergente,"valor_face: tribunal 30000.00, hub 31000.00; nota: ente compatível, mas o tribunal perdeu acentos; não confirmado"
+00345673220188260405,4,4,ok,"nota: ente compatível, mas o tribunal perdeu acentos; não confirmado"
+00456784320215020011,5,5,divergente,"ente: tribunal 'Uni�o', hub 'Município de Santos'"
+00567895420174036100,,6,so_hub,processo existe só em hub.csv
+00678906520168260053,6,,so_tribunal,processo existe só em tribunal.csv

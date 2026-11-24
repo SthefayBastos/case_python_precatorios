@@ -1,0 +1,6 @@
+arquivo,posicao,evento_id,acao,motivos
+pagamentos.json,1,ev-001,descartado,versão substituída pela posição 9 (atualizado_em mais recente)
+pagamentos.json,4,ev-002,descartado,duplicata exata da posição 2 de pagamentos.json
+pagamentos.json,5,ev-004,duvida,valor ausente ou inválido
+pagamentos.json,11,ev-009,duvida,valor zero ou negativo (erro ou estorno mal classificado?); nota: processo só existe em hub.csv
+pagamentos.json,12,ev-010,duvida,processo ausente ou fora do padrão CNJ
