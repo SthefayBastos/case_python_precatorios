@@ -35,19 +35,8 @@ Isso resolve o P1: reenviar o mesmo arquivo, ou receber o `ev-001` de novo, não
 
 ## Banco
 
-A proposta completa está em `sql/migracao_001.sql` (ajuste para o caminho real, por exemplo `Proposta SQL/migracao_sql.sql`). O `dados/schema.sql` original não foi alterado. A migração parte dele; se o banco de produção for diferente (dúvida 9), os comandos precisam ser revistos antes de aplicar.
+## Banco
 
-Resumo das mudanças e do problema que cada uma resolve:
+A migração está em `Proposta SQL/migracao_sql.sql`, e o motivo de cada mudança (problema, evidência e ressalvas) em `Proposta SQL/Resolucao.md`. O `dados/schema.sql` original não foi alterado. O SQL não foi executado em um Postgres.
 
-- **`UNIQUE (evento_id)` e coluna `atualizado_em`:** idempotência (P1). Falha se a produção já tiver `evento_id` repetido, então é preciso deduplicar antes (dúvida 10).
-- **Número do processo só com 20 dígitos, com `CHECK`:** o `CHAR(20)` atual não comporta o formato com máscara (25 caracteres) e o mesmo processo aparece com e sem máscara (P6 e P8).
-- **`apresentado_em` e `prazo_pagamento` calculado pelo banco:** regra do prazo em um só lugar (P4). O banco não resolve fuso; isso fica no script (dúvida 7).
-- **Tabela `importacao_rejeitada`:** rejeições deixam de sumir (P3).
-- **View `precatorio_saldo`:** o total pago deixa de ser somado e passa a ser calculado sobre os eventos, com estorno subtraindo (P2, dúvida 2).
-
-**O SQL não foi executado em um Postgres.** Os trechos mais sujeitos a erro são a coluna gerada e a view.
-
-### Limitações
-
-- **Total acima do `valor_face`:** um `CHECK` não alcança isso. Proposta: consulta de alerta sobre `precatorio_saldo`.
-- **Nome do ente:** continua texto livre (`MUNICIPIO DE SAO PAULO` contra `Município de São Paulo`). Uma tabela de entes com chave própria resolveria, mas depende de saber qual é a fonte oficial (dúvida 4).
+Resumo: `UNIQUE (evento_id)` e `atualizado_em` (P1), número do processo só com 20 dígitos (P6 e P8), prazo calculado pelo banco (P4), tabela de rejeitados (P3) e saldo calculado por view (P2).
