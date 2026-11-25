@@ -34,3 +34,5 @@ Formatos de processo: {'com máscara CNJ': 11, '20 dígitos sem máscara': 1, 'v
 erro na data de pagamento limite:
 o sistema usa < em vez de <= na comparação.
 hub se mostra inconsistente no tratamento de fuso impactando nas datas limites de pagamento.
+
+
